@@ -1,73 +1,39 @@
-Visualization
+Models and workflow
 =================
 
-Category Menu
----------
 
-On the left side, a category panel is displayed. By toggling the arrow button the panel retracts, recentering the model in the center as well.
-The categories are generated from the reference and query data and the model visualization is colored depending on the categories. By clicking the waterdrop icons the 
-coloring selection is set to the category in question. Each category contains subcategories which can be individually hidden and shown.
+Single-cell integration models combine data from different single-cell RNA sequencing studies or samples, correcting for technical differences between batches. This allows researchers to more accurately cluster cells and identify cell types across various datasets.
+Conditional neural networks have been shown to be competitive in correcting for batch effects and integrating large-scale reference atlases. These atlases in turn have been successfully utilized as references to gain insight into new experiments. 
+In particular, methods have been developed to map new datasets onto reference atlases in order to transfer existing knowledge, such as cell type labels, from these references to the newly mapped data. ScArches is an example of such a tool that enables query-to-reference mapping, and is used as the backbone for ArchMap. 
+ScArches is a deep learning python framework that is novel in its ability to extend to any conditional neural network-based data-integration method.
 
-.. image:: ../_static/Hide_multipleAttributes.png
-
-Interactable Model
----------
-
-The model's name can be found above its visualization, along with a info button for further information.
-
-The visualization is interactable, using click and drag as well as zooming (with either the mouse wheel or the buttons found right below the model's name). The zoom can be reset
-by using the rightmost button on the top, as seen in the figure below.
-By hovering over the individual cells in the visualization, a tooltip pops up, displaying its subcategory, dependent on the current category selection. 
-
-The visualization can be set to show the query, reference data or both, using the leftmost buttons on the top, as seen in the figure below.
-
-.. image:: ../_static/Hide_Query.png
-
-Graph Menu
----------
-
-To the right of the visualization, two graphs are displayed, one for the amount of cells per batch and the other for the amount of cells per type.
-The exact value is displayed by hovering over the columns, and by clicking the arrows button the graph is centered and enlarged.
-Since there can a large amount of different cell batches, we only show the 14 most common ones in our graphs. Otherwise the graphs would be too cluttered.
-
-.. image:: ../_static/popup_graphs.png
-
-
-Models and Workflow
-=================
-
-ScArches is a novel deep learning model that enables mapping query to reference datasets. The model allows the user to construct single or multi-modal (CITE-seq) references as well as classifying unlabelled query cells.
-Currently, mapping of query to reference datasets is offered on GeneCruncher.
-
-We use a REST-API that allows us to
-provide a unified endpoint for the different scarches models to backend
-and compute the query file and parse for the visualization.
-
-We support the following models: scVI, scANVI and totalVI.
+We currently support the following models for mapping: scVI, scANVI and scPoli. 
 
 scVI
 ---------
-The scVI is an unsupervised model and does not require cell type labels for the mapping. Generally, it also takes the least amount of time to train in comparison 
-to the other models. scVI maps query to atlases.
-
-| Workflow:
-| To compute the query we first get the already pre-trained model. The pre-trained model is then used to train the user query. By using an already pre-trained model the runtime is greatly shortened. We then compute the latent representation and UMAP which is then displayed on the website.
+Single-cell Variational Inference (scVI) is an unsupervised deep learning model that does not use cell type labels for training. Generally, it takes less time to train in comparison 
+to scANVI and scPoli.
 
 scANVI
 ---------
-scanVI supports labled and unlabled data and predicts the cell types. Due to that, there is an additional button on the top left (next to the query/reference button) 
-that toggles the predicted cells in the visualization.
-scANVI is a semi-supervised variant of scVI designed to leverage any available cell state annotations. Compared to unsupervised models, this model will perform better 
-integration if cell type labels are partially available in the query.
+single-cell ANnotation using Variational Inference (scANVI) is a semi-supervised variant of scVI designed to leverage any available cell type annotations. This model has been shown to perform better 
+integration if cell type labels are partially/fully available.
 
-| Workflow:
-| Just like the scVI workflow we use a pre-trained model and train it on the reference dataset. The model is then saved, parsed and a UMAP of the latent representation is generated. Unlabled cell types of the latent representation is computed as well as the accuracy of the learned classifier. The model is trained on the query dataset and uploaded to website to view.
-
-totalVI
+scPoli
 ---------
-totalVI is a multi-modal CITE-seq RNA and protein data model that can be used to map to multi-modal reference atlases.
-totalVI takes the most amount of time amongst the models and imputes the proteins that were observed.
+Single-cell population level integration (scPoli) is a semi-supervised conditional generative model that has been shown to be competitive in single cell data integration and cell type label transfer with other models inclduign scVI, scANVI, and Seurat v3. scPoli incorporates built-in cell type label classification and uncertainty estimation. scPoli learns both cell type and sample embeddings, allowing for better scalability with respect to number of samples to be integrated.
 
-| Workflow:
-| For complex totalVI models a pre-trained model is used to save time, which is trained on the reference dataset. The latent representation is saved from the trained data. We continue using the reference model to perform surgery on it and train the query dataset without protein data. Afterwards we impute protein data into the query dataset. Finally we get the latent representation of the reference + query dataset and compute the UMAP, which is then displayed on the website.
+Workflow
+---------
+All atlases on the ArchMap website have been integrated with either scVI, scANVI, or scPoli. These pre-trained integration models are used to map new query datasets uploaded by the user to the reference atlas associated with the model. The mapping results are then evaluated and a UMAP of the combined latent representation for the query and reference is generated. 
+Unlabeled cell types from the query are classified using labeled cell types from the reference atlas. Post-mapping, the combined query and reference can be visualized using ArchMap's cellxGene plugin and the combined results can be downloaded in .h5ad format.
+
+
+Mapping evaluation
+=================
+During processing, performance metrics to quantify the quality of the mapping are calculated. These metrics include the percentage of reference genes in the query data, the percentage of cells labelled “Unknown”, the percentage of query cells with anchors, and the cluster preservation score. 
+
+For the percentage of reference genes in the query data, a value less than 85% may contribute to poor mapping quality. The percentage of cells that are labelled as "Unknown" during cell type label transfer is based on the Euclidean uncertainty score for each query cell. A query cell is classified as having an "Unknown" cell type if its Euclidean uncertainty score is above 0.5. 
+The percentage of query cells with anchors represents query cells that have at least one mutual nearest neighbour among the cells of the reference dataset. These mutual nearest neighbours are termed anchors. A lower score may be returned for query datasets from the same tissue as the reference, but with a large proportion of cells from diseased donors. For example, mapping a dataset consisting of samples from healthy tissue to the HLCA gives a percentage of query cells with anchors of 63%. However, mapping a dataset consisting of samples from diseased tissue to the HLCA gives a percentage of query cells with anchors of 54%. 
+The cluster preservation score assesses how well Leiden clustering of the query dataset is preserved after the mapping process. The mean entropy of cluster labels within each neighbourhood is computed for both the original and integrated query. The median of the differences in mean entropy between the original and integrated query is then calculated. Scores are scaled between 0 and 5 with 5 being the best.
 

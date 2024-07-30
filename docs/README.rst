@@ -1,5 +1,5 @@
-Archmap Mapping Documentation
+ArchMap Mapping Documentation
 ============================
 
-Archmap helps you visualize all of your single-cell sequencing data in a fast and easy way using neural networks.
-The neural networking is done using the scArches package. More information about scArches can be found `here <https://scarches.readthedocs.io/en/latest/>`_.
+ArchMap (https://www.archmap.bio) is a free, no-code query-to-reference mapping framework that extends to python-based mapping methods and includes out-of-the-box cell type label transfer,  uncertainty estimation, and collaborative analysis features. The fully automated approach makes query mapping accessible to users with and without coding and machine learning expertise through its graphical user interface. A cloud-based setup, enables secure sharing of results, codeless downstream analysis, and collaborative annotation of the user’s mapping results.
+ArchMap query-to-reference mapping is powered by scArches. More information about scArches can be found `here <https://scarches.readthedocs.io/en/latest/>`_.
