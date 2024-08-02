@@ -44,3 +44,9 @@ For example for ann_level_5, the label transfer predictions will be found under 
 How can I interpret my label transfer results?
 ---------
 Note the the label transfer results at the finest level for the fetal brain and hypomap atlases (that is, subregion_class and Author_CellType) may not be as accurate as the coarser layer predictions.
+
+How can I visualize my downloaded results myself in cellxgene?
+---------
+To visualize your downloaded results yourself in cellxgene, you need to first install cellxgene locally. You can do so by following the steps `here <https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install,%20Launch,%20Quick%20Start>`_.
+ArchMap's built-in visualization functionality includes only a subset of the original reference to allow for faster computation. Hence, the neighbourhood graph of the downloaded file containing the full mapping must be recomputed if visualization is desired downstream using cellxgene.
+You can use the following colab notebook to recalculate the neighbourhood graph of your mapping. Please make sure to copy the notebook in order to make any needed edits.
