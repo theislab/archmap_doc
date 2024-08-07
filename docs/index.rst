@@ -58,7 +58,7 @@ Check out a short tutorial video of the mapping process here:
 
 .. note::
 
-   This project is under active development. If you come across any 
+   This project is under active development. If you come across any issues, please write an email to archmap.bio@gmail.com.
 
 
 Links To The Detailed Information Pages
