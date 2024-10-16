@@ -50,3 +50,7 @@ How can I visualize my downloaded results myself in cellxgene?
 To visualize your downloaded results yourself in cellxgene, you need to first install cellxgene locally. You can do so by following the steps `here <https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install,%20Launch,%20Quick%20Start>`_.
 ArchMap's built-in visualization functionality includes only a subset of the original reference to allow for faster computation. Hence, the neighbourhood graph of the downloaded file containing the full mapping must be recomputed if visualization is desired downstream using cellxgene.
 You can use the colab notebook `here <https://colab.research.google.com/drive/1CxyNutNUjK3SSLJbxhj_Gg89FO4Rr5EO?usp=sharing>`_ to recalculate the neighbourhood graph of your mapping. Please make sure to copy the notebook in order to make any needed edits. Once you have run the notebook, you can visualize the output file by launching cellxgene in your terminal, as shown `here <https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install,%20Launch,%20Quick%20Start>`_.
+
+Why can I not submit more than 5 projects at once?
+---------
+A limit of 5 projects per hour is set for each user. Thus, if you try to submit further projects within an hour, the newly submitted project will not show up on your project dashboard. This limit will reset after an hour.
