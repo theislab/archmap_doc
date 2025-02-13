@@ -1,61 +1,122 @@
-Beta Features
-===================
+# Beta Features
 
-The following beta features are available to beta users now:
+Upon request, ArchMap users can upload their own atlases. Additionally, a benchmarking pipeline should be run post-upload to compare the integration of the uploaded atlases with other integration methods.  
+Once successful benchmarking has taken place, users can download their benchmarking results and send them to the ArchMap team via the contact form on the website to complete the revision stage.  
+After the atlas revision stage is completed, the atlas builder has the option to make their atlas public for other users to map to (by default, the atlas is only accessible to the uploader). These steps are outlined in more detail below.
 
-For Atlas Uploaders
--------------------
+## For Atlas Uploaders
 
-They can now upload atlases to the archmap and use it for visualization. Note that the archmap is still in beta and is not yet available to the public.
+### Steps to upload atlases to ArchMap:
 
-Steps to upload atlases to the archmap:
+1. Go to [https://archmap.bio](https://archmap.bio)  
 
-1. Go to https://archmap.bio
+   ![Homepage](../_static/beta_feature/homepage.png)  
 
-   .. image:: ../_static/beta_feature/homepage.png
-      :alt: homepage
+2. Sign up for an account by clicking on **Sign Up**.  
 
-2. Sign up for the account by clicking on sign up.
+   ![Signup](../_static/beta_feature/signup_button.png)  
 
-   .. image:: ../_static/beta_feature/signup_button.png
-      :alt: signup
+3. Click on **Request for Beta Feature**.  
 
-3. Click on the option: "Request for Beta Feature"
+   ![Request Beta Access](../_static/beta_feature/request_beta_access.png)  
 
-   .. image:: ../_static/beta_feature/request_beta_access.png
-      :alt: request beta access
+4. Once requested, please wait for our review. After approval, you will be able to access the **Upload Atlas** tab. Now, log in at [https://archmap.bio](https://archmap.bio) and click on the **Log In** button at the top right corner.  
 
-4. Once it is clicked, Please wait while we review your request. Once it is approved, you will be able to access the tab which says "Upload Atlas". Now Log in by going to https://archmap.bio and clicking on the Log in button on the top right corner.
+   ![Login](../_static/beta_feature/signup_button.png)  
 
-   .. image:: ../_static/beta_feature/signup_button.png
-      :alt: login
+5. Click on **Upload Atlas** in the sidebar. Note that you will only see this option if we have accepted your request. Here, you can see all the atlases you have uploaded. If you have not uploaded any, the page will display "No atlases uploaded".  
 
-5. Click on the option: Upload Atlas on the sidebar. Note that you will only see it if we have accepted your request to the beta feature. You can see all the atlases you have uploaded here. If you have not uploaded any atlases, you will see no atlases uploaded.
+   ![Upload Atlas](../_static/beta_feature/upload_atlas.png)  
 
-   .. image:: ../_static/beta_feature/upload_atlas.png
-      :alt: upload atlas
+6. To upload an atlas, click **Upload Atlas**. Fill in the required details. Ensure that the `.h5ad` file you upload has the count data stored in the `.X` attribute. This is crucial for benchmarking during the revision stage.  
 
-6. To upload an atlas, Click on Upload Atlas button. You will get a form where you will have to fill in the details of the atlas.
+   ![Upload Atlas Form](../_static/beta_feature/upload_atlas_form.png)  
 
-   .. image:: ../_static/beta_feature/upload_atlas_form.png
-      :alt: upload atlas form
+7. You can upload the atlas either by selecting a file or by providing a link to the atlas.  
 
-7. For uploading the atlas, you can either upload the atlas by clicking on the upload button or you can give the link to the atlas in the link field.
+   ![Upload Options](../_static/beta_feature/upload_atlas_form_option.png)  
 
-   .. image:: ../_static/beta_feature/upload_atlas_form_option.png
-      :alt: upload atlas form
+8. To add a compatible model, select it and click **Upload**.  
 
-8. To add the compatible model associated with it, you can select the compatible model and then upload it by clicking on the upload button.
+   ![Upload Model](../_static/beta_feature/upload_atlas_form_model.png)  
 
-   .. image:: ../_static/beta_feature/upload_atlas_form_model.png
-      :alt: upload model form
+9. Along with the atlas and model files, the following information is required:  
 
-9. You can also choose to upload a classifier along with it optionally. To do so, you can select the classifier and then upload it by clicking on the upload button.
+   - **Atlas Name**: The display name of your atlas.  
+   - **Batch Covariate Key**: The `.obs` column name in your AnnData object containing batch covariate labels used during integration.  
+   - **Cell Type Key**: The cell type label used if you integrated with **semi-supervised models (scANVI or scPoli)**. If **scVI** was used, provide one of the cell type labels in your `.obs` dataframe.  
+   - **Cell Type for Label Transfer**: The cell type key to be used for label transfer when mapping query data. This must match one of the labels in your `.obs` dataframe.  
+   - **Number of Cells**: The total number of cells in your atlas.  
+   - **Species**: The species modeled by your atlas.  
+   - **Set Atlas to Private**: If `true` (default), your atlas remains private post-revision. If `false`, all ArchMap users can access and map to it.  
 
-   .. image:: ../_static/beta_feature/upload_atlas_form_classifier.png
-      :alt: upload classifier form
+10. Once the atlas and model files are uploaded, you can see your atlas in the list of uploaded atlases.  
 
-10. Once the atlas, model and classifier(optional) are uploaded, you can see it in the list of atlases uploaded.
+   ![Uploaded Atlas](../_static/beta_feature/uploaded_atlas.png)  
 
-   .. image:: ../_static/beta_feature/uploaded_atlas.png
-      :alt: uploaded atlas
+---
+
+## Atlas Revision Stage  
+
+After uploading your atlas, its status will be **"In Revision"**. Follow these steps to complete the revision stage:
+
+### How do I benchmark my atlas?
+
+1. Navigate to the **Search** page in the sidebar. Under the **ATLASES** tab, search for your atlas and hover over its card. Click **ATLAS BENCHMARK**.  
+
+   ![Benchmark Search](../_static/beta_feature/benchmark_search.png)  
+
+2. An info box will appear. Click **START BENCHMARK**. If successful, you will receive the message **"Benchmarking job triggered successfully!"**. If you see **"Failed to trigger the benchmarking job. Please try again."**, attempt the benchmark again. If the issue persists, contact the ArchMap team via our contact form on the website.  
+
+   ![Benchmark Start](../_static/beta_feature/benchmark_start.png)  
+
+3. Benchmarking duration depends on the atlas size but should not exceed **12 hours**. Once completed, return to the benchmark page, where you will see a **DOWNLOAD BENCHMARK RESULTS** button. This will provide a report including classifier performance for label transfer.  
+
+   ![Download Benchmark Results](../_static/beta_feature/benchmark_download_results.png)  
+
+---
+
+## The Benchmarking Procedure Explained  
+
+### Why we benchmark  
+
+Benchmarking ensures quality control for atlases uploaded to ArchMap. The process verifies that an atlas' integration performance is comparable to other integration methods.  
+We do **not** re-integrate the atlas using the user's method but train separate models and compare embeddings using existing integration benchmarking metrics (scib-metrics).  
+For more details on the benchmarking process, refer to the scripts:  
+ 
+- [Benchmarking pipeline](https://github.com/theislab/archmap_data/blob/benchmark3/mapping/scarches_api/test.py) 
+- [Benchmarking pipeline function definitions](https://github.com/theislab/archmap_data/blob/benchmark3/mapping/scarches_api/benchmark_atlas_upload.py)  
+
+### Benchmarking Pipeline Steps  
+
+1. **Benchmarking Atlas Integration**  
+   - Two additional integration models are trained based on the original model.  
+   - For example, if **scVI** was used, we train **scANVI and scPoli** for comparison. In this case, since **scVI** does not take into account cell type label info, we train two separate models of **scPoli** - one using and one excluding cell type info - for better comparison.   
+   - To accommodate large atlases and adhere to resource limits on Google Cloud, the benchmarking process subsets the dataset to **200,000 cells** while preserving all cell types and their proportions. Due to subsampling, batch effects may be unintentionally removed which may result in higher scores of batch correction metrics for the newly trained models compared to the user-integrated model. This is taken into account when revising the uploaded atlas
+
+2. **Atlas Minification**  
+   - The reference embedding is stored in the AnnData object.  
+   - Count data is removed from the AnnData object and stored separately.  
+   - This step is used to speed up the query-to-reference mapping pipeline.  
+
+3. **Classifier Training for Label Transfer**  
+   - **XGBoost** and **KNN** classifiers are trained on 20% held-out reference data.  
+   - The classifiers are stored in Google Cloud Storage along with the atlas.  
+
+---
+
+## Benchmarking Output  
+
+Once benchmarking is complete, users can download the results from ArchMap. The output includes:  
+
+1. **scib-metrics Report**  
+   - Compares newly trained integration models with the user-provided model.  
+   - Includes min-max scaled benchmarking metric results.  
+
+2. **Classifier Validation Results**  
+   - Performance evaluation of **XGBoost and KNN** classifiers.  
+   - Trained on 80% of the reference dataset, validated on 20%.  
+
+---
+
+If you have any questions or comments regarding the atlas upload process, feel free to contact the ArchMap team!

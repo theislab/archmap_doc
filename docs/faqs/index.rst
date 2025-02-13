@@ -54,3 +54,11 @@ You can use the colab notebook `here <https://colab.research.google.com/drive/1C
 Why can I not submit more than 5 projects at once?
 ---------
 A limit of 5 projects per hour is set for each user. Thus, if you try to submit further projects within an hour, the newly submitted project will not show up on your project dashboard. This limit will reset after an hour.
+
+How can I map my data to an older version of a model on scvi-hub?
+---------
+To map to an older version of a model on scvi-hub, the user can follow this `tutorial <https://drive.google.com/file/d/155fYroA0aCa9IUl80rvzy9L2RY_Hd1aT/view?usp=sharing>`_ to download their desired scvi-hub model (with specified version) and upload it to ArchMap to map their query to.
+
+How do I upload a scPoli model to ArchMap:
+---------
+To upload a scPoli model to ArchMap, please follow the tutorial provided `here <https://drive.google.com/file/d/1f-RH-4bU4UeTu5HVTB1e1ySYwdCyFf3F/view?usp=sharing>`_. As the scPoli output after integration generates three separate files, it is necessary to combine these files to upload to ArchMap. The necessary steps are outlined in the linked tutorial.
