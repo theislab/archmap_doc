@@ -11,10 +11,10 @@ After running this notebook you can upload the new .h5ad to ArchMap for mapping.
 .. image:: ../_static/faqs/batch_key.png
 
 
-My query data has more than the limit of 50 000 cells. What can I do?
+My query data has more than the limit of 200 000 cells. What can I do?
 ---------
 
-Even if your query data has more than 50 000 cells, you are still able to map your full data to ArchMap by splitting your data into batches and creating separate projects for each mapping. After you have obtained your mapping results for each project, you can download your results on the "Your Mappings" page and concatenate your results. 
+Even if your query data has more than 200 000 cells, you are still able to map your full data to ArchMap by splitting your data into batches and creating separate projects for each mapping. After you have obtained your mapping results for each project, you can download your results on the "Your Mappings" page and concatenate your results. 
 If you are not sure of the steps to take to do this, you can follow the linked notebooks that show how to correctly `separate <https://colab.research.google.com/drive/1-1kLHbo6sfvnOXKUbY49Nw3iCItIYky9?usp=sharing/>`_ you query pre-mapping and `concatenate <https://colab.research.google.com/drive/1voDJg4Yyz9yuubd76VaIn0fdKPsTJ6ue?usp=sharing/>`_ your results post-mapping. Please make sure to copy the notebooks in order to make any needed edits.
 
 Which classifier should I use?
@@ -51,9 +51,9 @@ To visualize your downloaded results yourself in cellxgene, you need to first in
 ArchMap's built-in visualization functionality includes only a subset of the original reference to allow for faster computation. Hence, the neighbourhood graph of the downloaded file containing the full mapping must be recomputed if visualization is desired downstream using cellxgene.
 You can use the colab notebook `here <https://colab.research.google.com/drive/1CxyNutNUjK3SSLJbxhj_Gg89FO4Rr5EO?usp=sharing>`_ to recalculate the neighbourhood graph of your mapping. Please make sure to copy the notebook in order to make any needed edits. Once you have run the notebook, you can visualize the output file by launching cellxgene in your terminal, as shown `here <https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install,%20Launch,%20Quick%20Start>`_.
 
-Why can I not submit more than 5 projects at once?
+Why can I not submit more than 40 projects at once?
 ---------
-A limit of 5 projects per hour is set for each user. Thus, if you try to submit further projects within an hour, the newly submitted project will not show up on your project dashboard. This limit will reset after an hour.
+A limit of 40 projects per hour is set for each user. Thus, if you try to submit further projects within an hour, the newly submitted project will not show up on your project dashboard. This limit will reset after an hour.
 
 How can I map my data to an older version of a model on scvi-hub?
 ---------
