@@ -69,5 +69,6 @@ Links To The Detailed Information Pages
 
    Home <self>
    visualization/index.rst
+   tutorials/index.rst
    beta_feature/index.rst
    faqs/index.rst
