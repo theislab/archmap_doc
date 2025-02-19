@@ -55,7 +55,7 @@ Steps to upload atlases to ArchMap:
    - **Atlas name to display:** This is the display name of your atlas on the website.  
    - **Batch covariate key:** The batch covariate key is the `.obs` column name of your AnnData object stored as your uploaded **h5ad** file. This column name is your chosen batch covariate label that was used during the integration of your atlas.  
    - **Cell type key:** This is the cell type key that was used if you integrated with semi-supervised models **scANVI** or **scPoli**. If **SCVI** was used, please input one of the cell type labels in your `.obs` dataframe of your AnnData object.  
-   - **Cell types for label transfer:** Please input the cell type key you would like to use for label transfer to mapped query data. This key name should match one of the cell type labels in your `.obs` dataframe of your AnnData object.  
+   - **Cell type keys for label transfer:** Please input the cell type keys you would like to use for label transfer to mapped query data. Each of the keys should match one of the cell type labels in your `.obs` dataframe of your AnnData object and should be separated by commas (if there are two or more levels of cell type labels you want to map to).  
    - **Number of cells:** The number of cells in your atlas.  
    - **Species:** The species that your atlas models.  
    - **Set atlas to private:** If `True` (default), your atlas will not be public for other users to map to after the revision stage. If `False`, all users of ArchMap will be able to access and map to your atlas post-revision.

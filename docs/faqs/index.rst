@@ -22,7 +22,7 @@ Which classifier should I use?
 We recommend to use the KNN classifier, as it performs the best for all atlases, specifically when transfering higher resolution cell type labels. 
 However, we recommend that you consider the evaluation metric "Percentage query cells unknown" for the respective mapping on the "Your Mappings" page 
 to evaluate the performance of a classifier in labelling your data. A cell will be labelled as "Unknown" if its uncertainty score is larger than 0.5.
-If a large percentage of your query cells are labelled "Unknown", we recommend to compare label transfer results with the XGBoost classifier.
+If a large percentage of your query cells are labelled "Unknown" with your chosen classifier, we recommend to compare the label transfer with other available classifiers to determine if uncertainty can be improved.
 Note that the number of query cells labelled "Unknown" is also dependent on the type of data you are mapping. 
 For example, a disease dataset or mouse or cell line data mapped to the human lung cell atlas will have a higher number of "Unknown" cell type classifications 
 than mapping healthy, human data. 
