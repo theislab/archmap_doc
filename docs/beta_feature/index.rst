@@ -40,7 +40,7 @@ Steps to upload atlases to ArchMap:
    .. image:: ../_static/beta_feature/upload_atlas_form.png
       :alt: upload atlas form
 
-7. For uploading the atlas, you can either upload the atlas by clicking on the **"Upload"** button or you can provide the link to the atlas in the **"Link"** field.
+7. For uploading the atlas, you can either upload the atlas by clicking on the **"Upload"** button or you can provide the link to the atlas in the **"Link"** field. Please make sure that you are uploading an .h5ad file **with count data** (i.e. a non-minified version), as the count data is necessary for the benchmarking pipeline to validate atlas integration quality.
 
    .. image:: ../_static/beta_feature/upload_atlas_form_option.png
       :alt: upload atlas form

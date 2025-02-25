@@ -10,6 +10,10 @@ After running this notebook you can upload the new .h5ad to ArchMap for mapping.
 
 .. image:: ../_static/faqs/batch_key.png
 
+I am getting an error "Error message: '_index' is a reserved name for dataframe columns."
+---------
+
+If you are getting this error, this means that a column in the .obs of .var dataframe of your anndata object has a column name called '_index'. Please remove this column or rename it. 
 
 My query data has more than the limit of 200 000 cells. What can I do?
 ---------

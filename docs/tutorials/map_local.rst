@@ -1,6 +1,3 @@
-Tutorials
-=========
-
 Running your mapping locally
 ----------------------------
 

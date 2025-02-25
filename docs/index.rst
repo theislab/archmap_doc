@@ -72,3 +72,4 @@ Links To The Detailed Information Pages
    tutorials/index.rst
    beta_feature/index.rst
    faqs/index.rst
+   citation gudelines/index.rst

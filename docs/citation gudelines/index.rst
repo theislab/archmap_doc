@@ -4,7 +4,7 @@ Citation Guidelines
 When using your fine-tuned model for your own research, we ask that you please cite the work of the authors who built the reference atlas you used for your mapping. Below you will find a list of references for each atlas found on ArchMap, as well as references of all demo datasets used.
 
 Atlases
-=================
+----------------------------
 
 HLCA
 Sikkema, L. et al. An integrated cell atlas of the lung in health and disease. Nat. Med. 29, 1563–1577 (2023).
@@ -44,7 +44,7 @@ Pancreas
 Hrovatin, K., Bastidas-Ponce, A., Bakhti, M. et al. Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas. Nat Metab 5, 1615–1637 (2023). https://doi.org/10.1038/s42255-023-00876-x
 
 Demo Datasets
-=================
+----------------------------
 
 ArchMap offers demo query datasets for query-to-reference mapping for all atlases. All demo dataset references are provided below.
 
