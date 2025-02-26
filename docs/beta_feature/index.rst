@@ -120,3 +120,14 @@ The benchmarking output includes:
 
 1. **scib-metrics report** comparing newly trained integration models with the user-integrated model. A min-max scaled version of benchmarking metrics is also included.  
 2. **Validation results** of the **XGBoost** and **KNN** classifiers on **20% held-out reference data**, using the cell type label inputted by the atlas builder during upload.
+
+
+Atlas privacy status
+-------------------
+
+An atlas uploader can at any time choose the privacy status of their uploaded atlas. When an atlas is set to private it is not publicly available for mapping and can only be accessed by the atlas uploader.
+A public atlas can be used by all users of ArchMap for mapping. To change the privacy status of your uploaded atlas, go to the Search button on the sidebar. Navigate to your atlas card and click on Learn More and then edit.
+At the bottom of the edit atlas box that is opened (pictured below), you can toggle your atlas between private and public. When the toggle is set to on, this means that the atlas is set to private.
+
+   .. image:: ../_static/beta_feature/make_private.png
+      :alt: atlas privacy status
