@@ -31,9 +31,28 @@ Unlabeled cell types from the query are classified using labeled cell types from
 
 Mapping evaluation
 =================
-During processing, performance metrics to quantify the quality of the mapping are calculated. These metrics include the percentage of reference genes in the query data, the percentage of cells labelled “Unknown”, the percentage of query cells with anchors, and the cluster preservation score. 
+During processing, performance metrics to quantify the quality of the mapping are calculated. These metrics include the percentage of overlapping genes between the reference and query data, the percentage of cells labelled “Unknown”, the percentage of query cells with anchors, and the cluster preservation score. 
+ 
 
-For the percentage of reference genes in the query data, a value less than 85% may contribute to poor mapping quality. The percentage of cells that are labelled as "Unknown" during cell type label transfer is based on the Euclidean uncertainty score for each query cell. A query cell is classified as having an "Unknown" cell type if its Euclidean uncertainty score is above 0.5. 
-The percentage of query cells with anchors represents query cells that have at least one mutual nearest neighbour among the cells of the reference dataset. These mutual nearest neighbours are termed anchors. A lower score may be returned for query datasets from the same tissue as the reference, but with a large proportion of cells from diseased donors. For example, mapping a dataset consisting of samples from healthy tissue to the HLCA gives a percentage of query cells with anchors of 63%. However, mapping a dataset consisting of samples from diseased tissue to the HLCA gives a percentage of query cells with anchors of 54%. 
+Percentage of overlapping genes between the reference and query data
+---------
+During mapping, query genes are subsetted to match the genes of the atlas and for any missing genes, expression values are padded with zeros. A larger number of missing genes in the query data may lead to inaccuracy in results.
+A value less than 85% may contribute to poor mapping quality.
+
+Percentage of query cells with anchors
+---------
+This score quantifies the percentage of query cells that have at least one mutual nearest neighbor among the cells of the reference dataset. These mutual nearest neighbours are termed anchors.
+We note that the percentage of anchor cells is affected by the number of cells in the query and reference data. Thus this metric should not be used to compare mapping quality across query or reference datasets.
+The purpose of this metric is not to be used for comparison of mappings across different references and queries, but rather to convey the success of the mapping and the suitability of the chosen atlas as a reference for the specific query data.\
+
+Note that a lower score may be returned for query datasets from the same tissue as the reference, but with a large proportion of cells from diseased donors. For example, mapping a dataset consisting of samples from healthy tissue to the HLCA gives a percentage of query cells with anchors of 63%. However, mapping a dataset consisting of samples from diseased tissue to the HLCA gives a percentage of query cells with anchors of 54%. 
+
+Percentage of query cells labelled “Unknown”
+---------
+This score quantifies the percentage of cells that are labelled as "Unknown" during cell type label transfer. It is based on the Euclidean uncertainty score for each query cell.
+A query cell is classified as having an "Unknown" cell type if its Euclidean uncertainty score is above 0.5. 
+
+
+Cluster preservation score
+---------
 The cluster preservation score assesses how well Leiden clustering of the query dataset is preserved after the mapping process. The mean entropy of cluster labels within each neighbourhood is computed for both the original and integrated query. The median of the differences in mean entropy between the original and integrated query is then calculated. Scores are scaled between 0 and 5 with 5 being the best.
-
