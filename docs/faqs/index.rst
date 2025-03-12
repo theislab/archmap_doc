@@ -63,6 +63,11 @@ How can I map my data to an older version of a model on scvi-hub?
 ---------
 To map to an older version of a model on scvi-hub, the user can follow this `tutorial <https://drive.google.com/file/d/155fYroA0aCa9IUl80rvzy9L2RY_Hd1aT/view?usp=sharing>`_ to download their desired scvi-hub model (with specified version) and upload it to ArchMap to map their query to.
 
-How do I upload a scPoli model to ArchMap:
+How do I upload a scPoli model to ArchMap?
 ---------
 To upload a scPoli model to ArchMap, please follow the tutorial provided `here <https://drive.google.com/file/d/1f-RH-4bU4UeTu5HVTB1e1ySYwdCyFf3F/view?usp=sharing>`_. As the scPoli output after integration generates three separate files, it is necessary to combine these files to upload to ArchMap. The necessary steps are outlined in the linked tutorial.
+
+How can I download atlas files from ArchMap?
+---------
+You can download all published atlases in ArchMap by going to either the References header (if you are not logged in) that can be accessed from the home page, or by clicking on the Search icon on the side bar (if you are logged in). You will then see a list of all reference atlases. Hover over your desired atlas and click on "Learn More". 
+This will take you to a new page where you will see a "Download" button. By clicking this button, the atlas files will be downloaded. This includes three separate files, namely *data.h5ad* (containing all atlas metadata and the reference embedding), *model.pt* (the deep learning model), and *data_only_count.h5ad* (containing the reference count data).
