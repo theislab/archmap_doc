@@ -10,47 +10,49 @@ For Atlas Uploaders
 
 Steps to upload atlases to ArchMap:
 
-1. Go to `https://archmap.bio <https://archmap.bio>`_
+1. Before uploading your atlas, we ask that you please run `this script https://drive.google.com/file/d/1Ip3jCJMz5BzLBCVlwfBA4VjNoirbh6Rw/view?usp=sharing>`_ to prepare your atlas for upload.
+
+2. Go to `https://archmap.bio <https://archmap.bio>`_
 
    .. image:: ../_static/beta_feature/homepage.png
       :alt: homepage
 
-2. Sign up for an account by clicking on "Sign Up."
+3. Sign up for an account by clicking on "Sign Up."
 
    .. image:: ../_static/beta_feature/signup_button.png
       :alt: signup
 
-3. Click on the option: **"Request for Beta Feature"**
+4. Click on the option: **"Request for Beta Feature"**
 
    .. image:: ../_static/beta_feature/request_beta_access.png
       :alt: request beta access
 
-4. Once clicked, please wait while we review your request. Once your request is approved, you will be able to access the tab labeled **"Upload Atlas."** Now log in by going to `https://archmap.bio <https://archmap.bio>`_ and clicking on the **"Log In"** button in the top right corner.
+5. Once clicked, please wait while we review your request. Once your request is approved, you will be able to access the tab labeled **"Upload Atlas."** Now log in by going to `https://archmap.bio <https://archmap.bio>`_ and clicking on the **"Log In"** button in the top right corner.
 
    .. image:: ../_static/beta_feature/signup_button.png
       :alt: login
 
-5. Click on the option **"Upload Atlas"** on the sidebar. Note that you will only see this option if we have accepted your request for this beta feature. You can see all the atlases you have uploaded here. If you have not uploaded any atlases, you will see **"No atlases uploaded."**
+6. Click on the option **"Upload Atlas"** on the sidebar. Note that you will only see this option if we have accepted your request for this beta feature. You can see all the atlases you have uploaded here. If you have not uploaded any atlases, you will see **"No atlases uploaded."**
 
    .. image:: ../_static/beta_feature/upload_atlas.png
       :alt: upload atlas
 
-6. To upload an atlas, click on the **"Upload Atlas"** button. You will get a form where you will need to fill in the details of the atlas. Please make sure the **h5ad** file you are uploading has the **count data stored in the .X attribute.** This is important for benchmarking during the revision stage.  
+7. To upload an atlas, click on the **"Upload Atlas"** button. You will get a form where you will need to fill in the details of the atlas. Please make sure the **h5ad** file you are uploading has the **count data stored in the .X attribute.** This is important for benchmarking during the revision stage.  
 
    .. image:: ../_static/beta_feature/upload_atlas_form.png
       :alt: upload atlas form
 
-7. For uploading the atlas, you can either upload the atlas by clicking on the **"Upload"** button or you can provide the link to the atlas in the **"Link"** field. Please make sure that you are uploading an .h5ad file **with count data** (i.e. a non-minified version), as the count data is necessary for the benchmarking pipeline to validate atlas integration quality.
+8. For uploading the atlas, you can either upload the atlas by clicking on the **"Upload"** button or you can provide the link to the atlas in the **"Link"** field. Please make sure that you are uploading an .h5ad file **with count data** (i.e. a non-minified version), as the count data is necessary for the benchmarking pipeline to validate atlas integration quality.
 
    .. image:: ../_static/beta_feature/upload_atlas_form_option.png
       :alt: upload atlas form
 
-8. To add the compatible model associated with it, you can select the compatible model and then upload it by clicking on the **"Upload"** button.
+9. To add the compatible model associated with it, you can select the compatible model and then upload it by clicking on the **"Upload"** button.
 
    .. image:: ../_static/beta_feature/upload_atlas_form_model.png
       :alt: upload model form
 
-9. Note that along with the atlas and model files, the following information is required:
+10. Note that along with the atlas and model files, the following information is required:
 
    - **Atlas name to display:** This is the display name of your atlas on the website.  
    - **Batch covariate key:** The batch covariate key is the `.obs` column name of your AnnData object stored as your uploaded **h5ad** file. This column name is your chosen batch covariate label that was used during the integration of your atlas.  
@@ -60,7 +62,7 @@ Steps to upload atlases to ArchMap:
    - **Species:** The species that your atlas models.  
    - **Set atlas to private:** If `True` (default), your atlas will not be public for other users to map to after the revision stage. If `False`, all users of ArchMap will be able to access and map to your atlas post-revision.
 
-10. Once the atlas and model files are uploaded, you can see your atlas in the list of uploaded atlases.
+11. Once the atlas and model files are uploaded, you can see your atlas in the list of uploaded atlases.
 
    .. image:: ../_static/beta_feature/uploaded_atlas.png
       :alt: uploaded atlas
@@ -68,9 +70,13 @@ Steps to upload atlases to ArchMap:
 Atlas Revision Stage
 --------------------
 
-Upon successful upload of your atlas, its status will be set to **"In Revision."** To complete the revision stage of your atlas, follow the steps below:
+Upon successful upload of your atlas, its status will be set to **"In Revision."** To complete the revision stage of your atlas, you need to either benchmark your atlas through the ArchMap website (see below) or provide your own benchmarking results, which could be a part of a preprint or stand-alone.
+Due to resource constraints, atlas benchmarking in ArchMap can only be done for atlases of size 4 Gb and smaller after running the aforementined preparation script. If your atlas is too large to run on the ArchMap website, you can also run the ArchMap benchmarking pipeline locally (see below for more details).
 
 How do I benchmark my atlas?
+****************************
+
+On ArchMap
 ****************************
 
 1. Navigate to the **Search** page using the sidebar. Under the **"ATLASES"** tab, search for the name of your atlas in the search bar. Hovering over your atlas card, select **"ATLAS BENCHMARK."**
@@ -87,6 +93,10 @@ How do I benchmark my atlas?
 
    .. image:: ../_static/beta_feature/benchmark_download_results.png
       :alt: benchmark download results
+
+Locally
+****************************
+
 
 The Benchmarking Procedure Explained
 -------------------------------------
