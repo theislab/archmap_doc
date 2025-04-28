@@ -10,7 +10,7 @@ For Atlas Uploaders
 
 Steps to upload atlases to ArchMap:
 
-1. Before uploading your atlas, we ask that you please run `this script https://drive.google.com/file/d/1Ip3jCJMz5BzLBCVlwfBA4VjNoirbh6Rw/view?usp=sharing>`_ to prepare your atlas for upload.
+1. Before uploading your atlas, we ask that you please run `this script <https://drive.google.com/file/d/1Ip3jCJMz5BzLBCVlwfBA4VjNoirbh6Rw/view?usp=sharing>`_ to prepare your atlas for upload.
 
 2. Go to `https://archmap.bio <https://archmap.bio>`_
 
