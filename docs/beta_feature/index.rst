@@ -147,22 +147,26 @@ The Benchmarking Procedure Explained
 
 Benchmarking all atlases uploaded to ArchMap ensures control over the quality of atlases available for mapping. The benchmarking process allows the ArchMap team to verify that an atlas integration performs comparably to other integration methods. We note that we do not re-integrate the atlas using the method originally used by the uploader but instead train separate models and compare embeddings using existing **integration benchmarking metrics (scib-metrics).**  
 For more details on how benchmarking is conducted, see:  
-- `Benchmarking script <https://github.com/theislab/archmap_data/blob/benchmark3/mapping/scarches_api/benchmark_atlas_upload.py>`_  
-- `Testing script <https://github.com/theislab/archmap_data/blob/benchmark3/mapping/scarches_api/test.py>`_  
+
+   - `Benchmarking function definition script <https://github.com/theislab/archmap_data/blob/benchmark3/mapping/scarches_api/benchmark_atlas_upload.py>`_  
+   - `Benchmarking run script <https://github.com/theislab/archmap_data/blob/benchmark3/mapping/scarches_api/test.py>`_  
 
 **Pipeline Overview**
 
 The benchmarking pipeline performs the following steps:
 
 1. **Benchmarking the atlas integration:**  
+
    - Two additional integration methods are trained depending on the original model used.  
    - To accommodate large atlas uploads, we subset the atlas to **200,000 cells** while maintaining all cell types and proportions.  
    - Due to subsampling, batch effects may be unintentionally removed, resulting in higher batch correction scores for newly trained models compared to the user-integrated model. This is considered during atlas revision.  
 
 2. **Minification of the atlas:**  
+
    - The reference embedding is stored, and count data is removed from the AnnData object to improve reference mapping speed.  
 
 3. **Training classifiers for label transfer:**  
+
    - **XGBoost** and **KNN** classifiers are trained and stored in Google Cloud Storage along with the atlas.  
 
 Benchmarking Output
