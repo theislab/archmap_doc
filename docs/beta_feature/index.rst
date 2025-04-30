@@ -57,7 +57,7 @@ Steps to upload atlases to ArchMap:
    - **Atlas name to display:** This is the display name of your atlas on the website.  
    - **Batch covariate key:** The batch covariate key is the `.obs` column name of your AnnData object stored as your uploaded **h5ad** file. This column name is your chosen batch covariate label that was used during the integration of your atlas.  
    - **Cell type key:** This is the cell type key that was used if you integrated with semi-supervised models **scANVI** or **scPoli**. If **SCVI** was used, please input one of the cell type labels in your `.obs` dataframe of your AnnData object.  
-   - **Cell type keys for label transfer:** Please input the cell type keys you would like to use for label transfer to mapped query data. Each of the keys should match one of the cell type labels in your `.obs` dataframe of your AnnData object and should be separated by commas (if there are two or more levels of cell type labels you want to map to).  
+   - **Cell type keys for label transfer:** Please input the cell type keys you would like to use for label transfer to the mapped query data. Each of the keys should match one of the cell type labels in your `.obs` dataframe of your AnnData object and should be separated by commas (if there are two or more levels of cell type labels you want to map to).  
    - **Number of cells:** The number of cells in your atlas.  
    - **Species:** The species that your atlas models.  
    - **Set atlas to private:** If `True` (default), your atlas will not be public for other users to map to after the revision stage. If `False`, all users of ArchMap will be able to access and map to your atlas post-revision.
@@ -84,7 +84,7 @@ On ArchMap
    .. image:: ../_static/beta_feature/benchmark_search.png
       :alt: benchmark search
 
-2. Upon selection, an info box will open. Clicking on **"START BENCHMARK"** will begin the benchmarking process. If successful, you will receive the alert **"Benchmarking job triggered successfully!"** If you receive the alert **"Failed to trigger the benchmarking job. Please try again."**, please try starting the benchmark again. If the benchmark continues to fail, contact the ArchMap team via the contact form.
+2. Upon selection, an info box will open. Clicking on **"START BENCHMARK"** will begin the benchmarking process. If successful, you will receive the alert **"Benchmarking job triggered successfully!"** If you receive the alert **"Failed to trigger the benchmarking job. Please try again."**, please wait a few seconds and try starting the benchmark again. If the benchmark continues to fail, contact the ArchMap team via the contact form.
 
    .. image:: ../_static/beta_feature/benchmark_start.png
       :alt: benchmark start
@@ -96,6 +96,48 @@ On ArchMap
 
 Locally
 ****************************
+
+
+To run the atlas benchmarking process locally, please follow these steps:
+
+1. Clone the repository:
+
+   .. code-block:: bash
+
+      git clone -b benchmark3 --single-branch https://github.com/theislab/archmap_data.git
+      cd mapping
+
+2. Create the environment:
+
+   .. code-block:: bash
+
+      bash create_env.sh
+      conda activate archmap_env
+
+
+
+3. Set your variables:
+
+   The following variables need to be set according to your atlas. The HNOCA atlas info is given by default in the script.
+    
+    - **modelName:** The name of the model used for integration e.g. scPoli
+    - **atlasName:** The atlas name e.g. HNOCA
+    - **classifierLabels:** The the cell type keys you would like to use for label transfer to the mapped query data. Each of the keys should match one of the cell type labels in your `.obs` dataframe of your AnnData object.
+    - **modelpath_local:** The directory where your atlas and model files are stored. 
+    - **adatafile_local:** The path to your atlas file. 
+    - **batchkey:** The batch covariate key is the `.obs` column name of your AnnData object stored as your **h5ad** file. This column name is your chosen batch covariate label that was used during the integration of your atlas. 
+    - **celltypekey:** This is the cell type key that was used if you integrated with semi-supervised models **scANVI** or **scPoli**. If **SCVI** was used, please input one of the cell type labels in your `.obs` dataframe of your AnnData object. 
+
+4. Run the script:
+
+   .. code-block:: bash
+
+      python scarches_api/run_local_benchmark.py
+
+   If you come across an issue, please don't hesitate to contact us through the contact form on the 
+   `website <https://www.archmap.bio/#/>`_.
+
+
 
 
 The Benchmarking Procedure Explained
