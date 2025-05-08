@@ -72,7 +72,7 @@ To upload an scPoli model to ArchMap, please follow the tutorial provided `here 
 Atlas Revision Stage
 --------------------
 
-Upon successful upload of your atlas, its status will be set to **"In Revision."** To complete the revision stage of your atlas, you need to either benchmark your atlas through the ArchMap website (see below) or provide your own benchmarking results, which could be a part of a preprint or stand-alone.
+Upon successful upload of your atlas, its status will be set to **"In Revision."** To complete the revision stage of your atlas, you need to benchmark your atlas through the ArchMap website (see below). This benchmarking pipeline also includes necessary steps (such as cell type classifier training) to prepare your atlas to be used for reference mapping and label transfer.
 Due to resource constraints, atlas benchmarking in ArchMap can only be done for atlases of size 4 Gb and smaller after running the aforementined preparation script. If your atlas is too large to run on the ArchMap website, you can also run the ArchMap benchmarking pipeline locally (see below for more details).
 
 How do I benchmark my atlas?
