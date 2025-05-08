@@ -47,7 +47,9 @@ Steps to upload atlases to ArchMap:
    .. image:: ../_static/beta_feature/upload_atlas_form_option.png
       :alt: upload atlas form
 
-9. To add the compatible model associated with it, you can select the compatible model and then upload it by clicking on the **"Upload"** button.
+9. To add the compatible model associated with it, you can select the compatible model and then upload it by clicking on the **"Upload"** button. 
+To upload an scPoli model to ArchMap, please follow the tutorial provided `here <https://drive.google.com/file/d/1f-RH-4bU4UeTu5HVTB1e1ySYwdCyFf3F/view?usp=sharing>`_. As the scPoli output after integration generates three separate files, it is necessary to combine these files to upload to ArchMap. The necessary steps are outlined in the linked tutorial.
+
 
    .. image:: ../_static/beta_feature/upload_atlas_form_model.png
       :alt: upload model form
