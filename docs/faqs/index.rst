@@ -71,3 +71,7 @@ How can I download atlas files from ArchMap?
 ---------
 You can download all published atlases in ArchMap by going to either the References header (if you are not logged in) that can be accessed from the home page, or by clicking on the Search icon on the side bar (if you are logged in). You will then see a list of all reference atlases. Hover over your desired atlas and click on "Learn More". 
 This will take you to a new page where you will see a "Download" button. By clicking this button, the atlas files will be downloaded. This includes three separate files, namely *data.h5ad* (containing all atlas metadata and the reference embedding), *model.pt* (the deep learning model), and *data_only_count.h5ad* (containing the reference count data).
+
+How can I convert an Rds file to h5ad format?
+---------
+To convert your data from Rds format to h5ad, you can run  `this Google Colab notebook <https://colab.research.google.com/drive/1-AMyF39pL-thpP9ENTIqIuz2cC2pgIQ2>`_. This notebook checks that your data meets the requirements for ArchMap and converts the data to h5ad format. Once you have run this notebook your data is ready to be uploaded to ArchMap! 
