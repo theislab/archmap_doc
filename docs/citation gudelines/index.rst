@@ -114,3 +114,64 @@ De Donno, C., Hediyeh-Zadeh, S., Moinfar, A.A. et al. Population-level integrati
 
 **Plaque demo**
 Query from Plaque atlas authors provided at https://github.com/kotr98/plaque-atlas-mapping?tab=readme-ov-file#example
+
+**Bladder (scvi-hub) demo**
+Adult bladder immune subset from https://cellxgene.cziscience.com/collections/0e54d4de-44f0-4d50-8649-b5c2bbe8f5d1
+
+**Blood (scvi-hub) demo**
+B cells -- CV19 infection, vaccination and HC from https://cellxgene.cziscience.com/collections/ecb739c5-fe0d-4b48-81c6-217c4d64eec4
+
+**Blood (scvi-hub) demo**
+healthy young bone marrow donor from https://cellxgene.cziscience.com/collections/93eebe82-d8c3-41bc-a906-63b5b5f24a9d
+
+**Eye (scvi-hub) demo**
+Horizontal cells of the human fovea and peripheral retina from https://cellxgene.cziscience.com/collections/1d1c7275-476a-49e2-9022-ad1b1c793594
+
+**Fat (scvi-hub) demo**
+snRNA-seq of human subcutaneous adipose tissue - adipocytes from https://cellxgene.cziscience.com/collections/ba84c7ba-8d8c-4720-a76e-3ee37dc89f0b
+
+**Heart (scvi-hub) demo**
+dataset of 'High-resolution single-cell transcriptomic survey of cardiomyocytes from patients with hypertrophic cardiomyopathy' from https://cellxgene.cziscience.com/collections/1e313b15-4aca-4e5a-94a3-1093c4c42abd
+
+**Liver (scvi-hub) demo**
+B cells from human healthy donor liver samples from https://cellxgene.cziscience.com/collections/0c8a364b-97b5-4cc8-a593-23c38c6f0ac5
+
+**Lymph node (scvi-hub) demo**
+scRNA-seq of adult gamma delta T cells from https://cellxgene.cziscience.com/collections/ec691f5f-0aac-433c-8f78-e7f4b85a05e0
+
+**Mammary (scvi-hub) demo**
+Breast cancer 4 patients archival FFPE samples profiling with Chromium FLEX from https://cellxgene.cziscience.com/collections/bd552f76-1f1b-43a3-b9ee-0aace57e90d6
+
+**Muscle (scvi-hub) demo**
+Immune Cells of Human skeletal muscle ageing atlas from https://cellxgene.cziscience.com/collections/2d40e6a7-f2fd-49ba-9db9-6b97e4c6dad5
+
+**Pancreas (scvi-hub) demo**
+Single cell transcriptome analysis of human pancreas reveals transcriptional signatures of aging and somatic mutation patterns from https://cellxgene.cziscience.com/collections/a238e9fa-2bdf-41df-8522-69046f99baff
+
+**Prostate (scvi-hub) demo**
+A Cellular Anatomy of the Normal Adult Human Prostate and Prostatic Urethra - Human Fibromuscular Stromal Cells from https://cellxgene.cziscience.com/collections/e2a4a67f-6a18-431a-ab9c-6e77dd31cc80
+
+**Salivary gland (scvi-hub) demo**
+Gland Immune Atlas from https://cellxgene.cziscience.com/collections/065ad318-59fd-4f8c-b4b1-66caa7665409
+
+**Skin (scvi-hub) demo**
+Single-cell transcriptomes of the human skin reveal age-related loss of fibroblast priming from https://cellxgene.cziscience.com/collections/c353707f-09a4-4f12-92a0-cb741e57e5f0
+
+**Spleen (scvi-hub) demo**
+scRNA-seq of adult gamma delta T cells from https://cellxgene.cziscience.com/collections/ec691f5f-0aac-433c-8f78-e7f4b85a05e0
+
+**Thymus (scvi-hub) demo**
+thymus scRNA-seq atlas - B cell subset from https://cellxgene.cziscience.com/collections/fc19ae6c-d7c1-4dce-b703-62c5d52061b4
+
+**Tongue (scvi-hub) demo**
+Oral and Craniofacial Atlas subset from https://cellxgene.cziscience.com/collections/065ad318-59fd-4f8c-b4b1-66caa7665409
+
+**Trachea (scvi-hub) demo**
+B cells (trachea) from https://cellxgene.cziscience.com/collections/c1241244-b22d-483d-875b-75699efb9f3c
+
+**Uterus (scvi-hub) demo**
+Non-pregnant Uterus (Endometrium - Epithelial) from https://cellxgene.cziscience.com/collections/32f2fd23-ec74-486f-9544-e5b2f41725f5
+
+**Vasculature (scvi-hub) demo**
+scRNA-seq data analysis of endothelium-enriched mesenteric arterial tissues from human donors from https://cellxgene.cziscience.com/collections/db468083-041c-41ca-8f6f-bf991a070adf
+
