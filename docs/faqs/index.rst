@@ -75,3 +75,8 @@ This will take you to a new page where you will see a "Download" button. By clic
 How can I convert an Rds file to h5ad format?
 ---------
 To convert your data from Rds format to h5ad, you can run  `this Google Colab notebook <https://colab.research.google.com/drive/1-AMyF39pL-thpP9ENTIqIuz2cC2pgIQ2>`_. This notebook checks that your data meets the requirements for ArchMap and converts the data to h5ad format. Once you have run this notebook your data is ready to be uploaded to ArchMap! 
+
+I am receiving the error: "Less than 5% of genes in your query overlap with the reference data." What does this mean?
+---------
+This error means that there is insufficient overlap between the genes in your query dataset and the genes in the reference atlas you are trying to map to. This means that either you are not using an appropriate atlas for your query data or you do not have the gene symbols or Ensembl IDs saved in the .var_names attribute of your h5ad file. Please make sure either gene symbols or Ensembl IDs are used in your h5ad file. 
+The choice of using gene symbols or Ensembl IDs is reference agnostic and the format will be converted automatically to match the reference in the ArchMap pipeline. You can use the following `Google Colab notebook <https://colab.research.google.com/drive/1oBIXAB6-6hgRB8IgpRM-adtZw5GY4yIf?usp=sharing>`_ to check and modify your h5ad file accordingly.
