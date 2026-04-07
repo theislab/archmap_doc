@@ -23,8 +23,8 @@ Available classifiers include KNN, XGBoost, and the native classifiers for scANV
 After selecting your atlas, model, and classifier, you can then upload your query data by drag-and-drop or by clicking on the upload field. In order to map your data successfully, **please follow the instructions on the left of the upload page!**.
 To check whether your file satisfies these requirements, you can run the relevant colab tutorial:
 
-   - `Tutorial for RDS file <https://colab.research.google.com/drive/1-AMyF39pL-thpP9ENTIqIuz2cC2pgIQ2#scrollTo=EXV4m9lq8cV0>`_
-   - `Tutorial for h5ad file <https://drive.google.com/file/d/16p2YYAOcw4fmbNlBoPid1CSYNHiK3IqI/view?usp=sharing>`_
+   - `Tutorial for RDS file <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/CheckFormatRds.ipynb>`_
+   - `Tutorial for h5ad file <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/CheckFormatH5ad.ipynb>`_
 
 .. image:: _static/upload_query.png
 

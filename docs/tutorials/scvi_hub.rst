@@ -6,7 +6,7 @@ By default, all users have  access to the latest versions of all scvi-hub atlase
 However, in the scenario that a user would like to map their data to an earlier version of an atlas, the user can follow the steps outlined below.
 In summary, these steps involve downloading the desired atlas version using the notebook below and uploading the atlas to the ArchMap webite for mapping. 
 
-1. Download the desired atlas version using this `notebook <https://colab.research.google.com/drive/155fYroA0aCa9IUl80rvzy9L2RY_Hd1aT>`_.
+1. Download the desired atlas version using this `notebook <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/download_scvi_hub_model.ipynb>`_.
 
 2. Upload the h5ad file and model.pt file to ArchMap. For detail on how to do this see this :doc:`tutorial <../beta_feature/index>`. 
 

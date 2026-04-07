@@ -1,11 +1,16 @@
 FAQs
 =================
 
+What format should my query data be in to upload to ArchMap?
+---------
+Your query data should be in .h5ad format to upload to ArchMap. The .h5ad file should contain the raw count data in the .X attribute and the gene names or Ensembl IDs in the .var_names attribute. Also, your batch information should be labelled as "batch" in the .obs dataframe of your h5ad file.
+To check if you data meets the upload requirements, you can use the `Google Colab notebook <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/CheckFormatH5ad.ipynb>`_ to convert your data
+
 I am getting an error “Batch key information not specified…”
 ---------
 
 If you are getting the error shown in the screenshot below when processing your query, this means that your query is missing batch information or you have not labelled your batch information correctly to "batch" in your .h5ad file. 
-If your data is taken from a single sample and does not contain batch info or you are not sure how to relabel your batch info in you .h5ad file, you can make a copy of the following `notebook <https://colab.research.google.com/drive/11a-QpqPnBFvdB3ySQSZuoICXvuWKxQwm?usp=sharing/>`_ and run it, which will label your data as being from a single sample/batch or will relabel the batch info based on the name that you input for "custom_batch_name". 
+If your data is taken from a single sample and does not contain batch info or you are not sure how to relabel your batch info in you .h5ad file, you can make a copy of the following `notebook <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/add_batch_key.ipynb>`_ and run it, which will label your data as being from a single sample/batch or will relabel the batch info based on the name that you input for "custom_batch_name". 
 After running this notebook you can upload the new .h5ad to ArchMap for mapping.
 
 .. image:: ../_static/faqs/batch_key.png
@@ -19,7 +24,8 @@ My query data has more than the limit of 200 000 cells. What can I do?
 ---------
 
 Even if your query data has more than 200 000 cells, you are still able to map your full data to ArchMap by splitting your data into batches and creating separate projects for each mapping. After you have obtained your mapping results for each project, you can download your results on the "Your Mappings" page and concatenate your results. 
-If you are not sure of the steps to take to do this, you can follow the linked notebooks that show how to correctly `separate <https://colab.research.google.com/drive/1-1kLHbo6sfvnOXKUbY49Nw3iCItIYky9?usp=sharing/>`_ you query pre-mapping and `concatenate <https://colab.research.google.com/drive/1voDJg4Yyz9yuubd76VaIn0fdKPsTJ6ue?usp=sharing/>`_ your results post-mapping. Please make sure to copy the notebooks in order to make any needed edits.
+If you are not sure of the steps to take to do this, you can follow the linked notebooks that show how to correctly `separate <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/separate_query.ipynb>`_ you query pre-mapping and `concatenate <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/concatenate_query.ipynb
+>`_ your results post-mapping. Please make sure to copy the notebooks in order to make any needed edits.
 
 Which classifier should I use?
 ---------
@@ -53,7 +59,7 @@ How can I visualize my downloaded results myself in cellxgene?
 ---------
 To visualize your downloaded results yourself in cellxgene, you need to first install cellxgene locally. You can do so by following the steps `here <https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install,%20Launch,%20Quick%20Start>`_.
 ArchMap's built-in visualization functionality includes only a subset of the original reference to allow for faster computation. Hence, the neighbourhood graph of the downloaded file containing the full mapping must be recomputed if visualization is desired downstream using cellxgene.
-You can use the colab notebook `here <https://colab.research.google.com/drive/1CxyNutNUjK3SSLJbxhj_Gg89FO4Rr5EO?usp=sharing>`_ to recalculate the neighbourhood graph of your mapping. Please make sure to copy the notebook in order to make any needed edits. Once you have run the notebook, you can visualize the output file by launching cellxgene in your terminal, as shown `here <https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install,%20Launch,%20Quick%20Start>`_.
+You can use the colab notebook `here <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/compute_neighbour_graph.ipynb>`_ to recalculate the neighbourhood graph of your mapping. Please make sure to copy the notebook in order to make any needed edits. Once you have run the notebook, you can visualize the output file by launching cellxgene in your terminal, as shown `here <https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install,%20Launch,%20Quick%20Start>`_.
 
 Why can I not submit more than 40 projects at once?
 ---------
@@ -61,11 +67,11 @@ A limit of 40 projects per hour is set for each user. Thus, if you try to submit
 
 How can I map my data to an older version of a model on scvi-hub?
 ---------
-To map to an older version of a model on scvi-hub, the user can follow this `tutorial <https://drive.google.com/file/d/155fYroA0aCa9IUl80rvzy9L2RY_Hd1aT/view?usp=sharing>`_ to download their desired scvi-hub model (with specified version) and upload it to ArchMap to map their query to.
+To map to an older version of a model on scvi-hub, the user can follow this `tutorial <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/download_scvi_hub_model.ipynb>`_ to download their desired scvi-hub model (with specified version) and upload it to ArchMap to map their query to.
 
 How do I upload a scPoli model to ArchMap?
 ---------
-To upload a scPoli model to ArchMap, please follow the tutorial provided `here <https://drive.google.com/file/d/1f-RH-4bU4UeTu5HVTB1e1ySYwdCyFf3F/view?usp=sharing>`_. As the scPoli output after integration generates three separate files, it is necessary to combine these files to upload to ArchMap. The necessary steps are outlined in the linked tutorial.
+To upload a scPoli model to ArchMap, please follow the tutorial provided `here <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/convert_scpoli_model.ipynb>`_. As the scPoli output after integration generates three separate files, it is necessary to combine these files to upload to ArchMap. The necessary steps are outlined in the linked tutorial.
 
 How can I download atlas files from ArchMap?
 ---------
@@ -74,9 +80,9 @@ This will take you to a new page where you will see a "Download" button. By clic
 
 How can I convert an Rds file to h5ad format?
 ---------
-To convert your data from Rds format to h5ad, you can run  `this Google Colab notebook <https://colab.research.google.com/drive/1-AMyF39pL-thpP9ENTIqIuz2cC2pgIQ2>`_. This notebook checks that your data meets the requirements for ArchMap and converts the data to h5ad format. Once you have run this notebook your data is ready to be uploaded to ArchMap! 
+To convert your data from Rds format to h5ad, you can run  `this Google Colab notebook <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/CheckFormatRds.ipynb>`_. This notebook checks that your data meets the requirements for ArchMap and converts the data to h5ad format. Once you have run this notebook your data is ready to be uploaded to ArchMap! 
 
 I am receiving the error: "Less than 5% of genes in your query overlap with the reference data." What does this mean?
 ---------
 This error means that there is insufficient overlap between the genes in your query dataset and the genes in the reference atlas you are trying to map to. This means that either you are not using an appropriate atlas for your query data or you do not have the gene symbols or Ensembl IDs saved in the .var_names attribute of your h5ad file. Please make sure either gene symbols or Ensembl IDs are used in your h5ad file. 
-The choice of using gene symbols or Ensembl IDs is reference agnostic and the format will be converted automatically to match the reference in the ArchMap pipeline. You can use the following `Google Colab notebook <https://colab.research.google.com/drive/1oBIXAB6-6hgRB8IgpRM-adtZw5GY4yIf?usp=sharing>`_ to check and modify your h5ad file accordingly.
+The choice of using gene symbols or Ensembl IDs is reference agnostic and the format will be converted automatically to match the reference in the ArchMap pipeline. You can use the following `Google Colab notebook <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/CheckGeneInfo.ipynb>`_ to check and modify your h5ad file accordingly.

@@ -10,7 +10,7 @@ For Atlas Uploaders
 
 Steps to upload atlases to ArchMap:
 
-1. Before uploading your atlas, we ask that you please run `this script <https://drive.google.com/file/d/1Ip3jCJMz5BzLBCVlwfBA4VjNoirbh6Rw/view?usp=sharing>`_ to prepare your atlas for upload.
+1. Before uploading your atlas, we ask that you please run `this script <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/prepare_atlas_for_upload.ipynb>`_ to prepare your atlas for upload.
 
 2. Go to `https://archmap.bio <https://archmap.bio>`_
 
@@ -48,7 +48,7 @@ Steps to upload atlases to ArchMap:
       :alt: upload atlas form
 
 9. To add the compatible model associated with it, you can select the compatible model and then upload it by clicking on the **"Upload"** button. 
-To upload an scPoli model to ArchMap, please follow the tutorial provided `here <https://drive.google.com/file/d/1f-RH-4bU4UeTu5HVTB1e1ySYwdCyFf3F/view?usp=sharing>`_. As the scPoli output after integration generates three separate files, it is necessary to combine these files to upload to ArchMap. The necessary steps are outlined in the linked tutorial.
+To upload an scPoli model to ArchMap, please follow the tutorial provided `here <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/convert_scpoli_model.ipynb>`_. As the scPoli output after integration generates three separate files, it is necessary to combine these files to upload to ArchMap. The necessary steps are outlined in the linked tutorial.
 
 
    .. image:: ../_static/beta_feature/upload_atlas_form_model.png
