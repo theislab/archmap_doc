@@ -24,8 +24,7 @@ My query data has more than the limit of 200 000 cells. What can I do?
 ---------
 
 Even if your query data has more than 200 000 cells, you are still able to map your full data to ArchMap by splitting your data into batches and creating separate projects for each mapping. After you have obtained your mapping results for each project, you can download your results on the "Your Mappings" page and concatenate your results. 
-If you are not sure of the steps to take to do this, you can follow the linked notebooks that show how to correctly `separate <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/separate_query.ipynb>`_ you query pre-mapping and `concatenate <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/concatenate_query.ipynb
->`_ your results post-mapping. Please make sure to copy the notebooks in order to make any needed edits.
+If you are not sure of the steps to take to do this, you can follow the linked notebooks that show how to correctly `separate <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/separate_query.ipynb>`_ you query pre-mapping and `concatenate <https://colab.research.google.com/github/theislab/archmap_data/blob/mappingjob/preprocessing_tutorials/concatenate_query.ipynb>`_ your results post-mapping. Please make sure to copy the notebooks in order to make any needed edits.
 
 Which classifier should I use?
 ---------
